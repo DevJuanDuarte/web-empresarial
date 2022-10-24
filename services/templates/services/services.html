@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+<!--Contenido -->
+{% for service in services %}
+<div class="contenido-service">
+	<div class="card text-center">
+		<div class="card-header">
+			<h4>{{service.subtitle}}</h4>
+			<h3>{{service.title}}</h3>
+		</div>
+		<img src="{% static 'core/img/foond2-img.jpg'%}" class="card-img-top" alt="...">
+		<div class="card-body">
+			<p class="card-text">{{service.content}}</p>
+		</div>
+		<div class="card-footer">
+			<h6>Publicado: {{service.published|date:"SHORT_DATE_FORMAT"}}</h6>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
